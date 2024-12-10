@@ -3,15 +3,37 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Painel do Admin</title>
+    <title>Painel do Usuário</title>
     <link rel="stylesheet" href="styles.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Open+Sans:wght@600&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="components.js" defer></script>
   </head>
   <body>
-    <header>
-      <h1>Bem-vindo, Usuário!</h1>
-    </header>
+    <!-- Inclusão do HEADER -->
+    <div data-include="header.html"></div>
+
     <main>
-      <p>Esta é a tela inicial para usuários.</p>
+      <section class="dashboard">
+        <h2>Painel do Usuário</h2>
+        <div class="dashboard-buttons">
+          <button onclick="window.location.href='criar-chamado.html'">
+            <img src="assets/img/writing.png" alt="Criar Chamado" />
+            <span>Criar Chamado</span>
+          </button>
+          <button onclick="window.location.href='consultar-cadastro.html'">
+            <img src="assets/img/user.png" alt="Consultar Cadastro" />
+            <span>Consultar Cadastro</span>
+          </button>
+        </div>
+      </section>
     </main>
+
+    <!-- Inclusão do FOOTER -->
+    <div data-include="footer.html"></div>
   </body>
 </html>
