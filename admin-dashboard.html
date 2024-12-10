@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Painel do Administrador</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="components.js" defer></script>
+  </head>
+  <body>
+    <!-- Inclusão do HEADER -->
+    <div data-include="header.html"></div>
+
+    <main>
+      <section class="dashboard">
+        <h2>Painel do Administrador</h2>
+        <div class="dashboard-buttons">
+          <button onclick="window.location.href='visualizar-chamados.html'">
+            <img src="assets/img/view.png" alt="Visualizar Chamados" />
+            <span>Visualizar Chamados</span>
+          </button>
+          <button onclick="window.location.href='chamados-concluidos.html'">
+            <img src="assets/img/checked.png" alt="Chamados Concluídos" />
+            <span>Chamados Concluídos</span>
+          </button>
+          <button onclick="window.location.href='relatorios.html'">
+            <img src="assets/img/docs.png" alt="Relatórios" />
+            <span>Relatórios</span>
+          </button>
+          <button onclick="window.location.href='consultar-usuarios.html'">
+            <img src="assets/img/user.png" alt="Consultar Usuários" />
+            <span>Consultar Usuários</span>
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <!-- Inclusão do FOOTER -->
+    <div data-include="footer.html"></div>
+  </body>
+</html>

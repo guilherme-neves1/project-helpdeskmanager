@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Help Desk Manager - Login</title>
+    <link rel="stylesheet" href="styles.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Open+Sans:wght@600&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="components.js" defer></script>
+  </head>
+  <body>
+    <!-- Inclusão do HEADER -->
+    <div data-include="header.html"></div>
+
+    <main>
+      <div class="login-container">
+        <div class="tabs">
+          <button id="userTab" class="active" onclick="switchTab('user')">
+            USUÁRIO
+          </button>
+          <button id="adminTab" onclick="switchTab('admin')">ADMIN</button>
+        </div>
+        <form id="loginForm">
+          <label for="email">EMAIL</label>
+          <input
+            type="email"
+            id="email"
+            placeholder="Digite seu email"
+            required
+          />
+          <label for="password">SENHA</label>
+          <input
+            type="password"
+            id="password"
+            placeholder="Digite sua senha"
+            required
+          />
+          <div class="remember-me">
+            <input type="checkbox" id="remember" />
+            <label for="remember">Manter conectado</label>
+          </div>
+          <button type="submit">Entrar</button>
+        </form>
+
+        <div class="signup-container">
+          <p>Não tem uma conta?</p>
+          <button
+            class="signup-button"
+            onclick="window.location.href='cadastro.html'"
+          >
+            Cadastre-se
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <!-- Inclusão do FOOTER -->
+    <div data-include="footer.html"></div>
+
+    <script>
+      document
+        .getElementById("loginForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const email = document.getElementById("email").value;
+          const password = document.getElementById("password").value;
+          const isUserTabActive = document
+            .getElementById("userTab")
+            .classList.contains("active");
+          const role = isUserTabActive ? "user" : "admin";
+
+          fetch("http://localhost/api_crud_projeto/Login.php", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ email, password, role }),
+          })
+            .then((response) => response.json())
+            .then((data) => {
+              if (data.status === "success") {
+                const redirectUrl =
+                  role === "user"
+                    ? "user-dashboard.html"
+                    : "admin-dashboard.html";
+                window.location.href = redirectUrl;
+              } else {
+                alert(data.message || "Erro no login.");
+              }
+            })
+            .catch((error) =>
+              console.error("Erro ao processar o login:", error)
+            );
+        });
+
+      function switchTab(role) {
+        const userTab = document.getElementById("userTab");
+        const adminTab = document.getElementById("adminTab");
+
+        if (role === "user") {
+          userTab.classList.add("active");
+          adminTab.classList.remove("active");
+        } else {
+          adminTab.classList.add("active");
+          userTab.classList.remove("active");
+        }
+      }
+    </script>
+  </body>
+</html>
