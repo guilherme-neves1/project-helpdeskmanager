@@ -276,3 +276,168 @@ footer {
 .dashboard-buttons button span {
   text-align: center;
 }
+
+/* Ajuste geral do container */
+.login-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  background-color: #f9f9f9;
+}
+
+/* Centralização dos títulos */
+.login-container h2 {
+  text-align: center;
+  font-family: "Merriweather", serif;
+  color: #8b0000;
+  margin-bottom: 20px;
+}
+
+/* Formulário de busca */
+#search-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 40px;
+}
+
+#search-form label {
+  font-weight: bold;
+  font-family: "Open Sans", sans-serif;
+  margin-bottom: 5px;
+}
+
+#search-form input {
+  width: 100%;
+  max-width: 300px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-family: "Open Sans", sans-serif;
+}
+
+#search-form button {
+  padding: 10px 20px;
+  font-family: "Open Sans", sans-serif;
+  background-color: #8b0000;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+#search-form button:hover {
+  background-color: #a30000;
+}
+
+/* Formulário de detalhes do usuário */
+#user-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#user-form label {
+  font-weight: bold;
+  font-family: "Open Sans", sans-serif;
+}
+
+#user-form input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-family: "Open Sans", sans-serif;
+}
+
+/* Botões de ação */
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.buttons button {
+  flex: 1;
+  padding: 10px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+#update-button {
+  background-color: #008000;
+  color: #fff;
+}
+
+#update-button:hover {
+  background-color: #006400;
+}
+
+#delete-button {
+  background-color: #a30000;
+  color: #fff;
+}
+
+#delete-button:hover {
+  background-color: #8b0000;
+}
+
+/* Espaçamento entre inputs e botões */
+#user-form input,
+#user-form label {
+  margin-bottom: 5px;
+}
+
+#user-form .buttons {
+  margin-top: 20px;
+}
+
+/* Botão Voltar */
+#back-button {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 10px 20px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+  background-color: #8b0000;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  z-index: 1000; /* Garante que o botão fique sobre outros elementos */
+}
+
+#back-button:hover {
+  background-color: #a30000;
+}
+
+/* Ajusta o container para evitar sobreposição */
+.login-container {
+  position: relative; /* Necessário para o botão se alinhar ao container */
+  padding-top: 50px; /* Dá espaço para o botão voltar */
+}
+
+/* Espaçamento para o main */
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0; /* Adiciona espaçamento superior e inferior */
+}
+
+/* Ajuste para o formulário não tocar no footer */
+.login-container {
+  margin: 20px 0; /* Espaçamento superior e inferior */
+}
